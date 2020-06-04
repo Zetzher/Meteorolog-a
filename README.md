@@ -21,7 +21,7 @@ Utilizarlo en el directorio raíz, donde se encuentra package.json para instalar
 ### Usabilidad
 
 -Buscar el municipio. </br>
--Al darle click se obtiene una tarjeta con estilos básicos en las que no trae información del municipio, así como el nombre, temperatura máxima (amarillo), temperatura mínima (cyan), estado del cielo y porcentaje de humedad, aunque la última fuera prescindible.
+-Al darle click se obtiene una tarjeta con estilos básicos en las que nos trae información del municipio, así como el nombre, temperatura máxima (amarillo), temperatura mínima (cyan), estado del cielo y porcentaje de humedad, aunque la última fuera prescindible.
 
 
 ### A destacar
