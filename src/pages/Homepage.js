@@ -12,12 +12,13 @@ const Homepage = () => {
     const [municipios, guardarMunicipios] = useState();
     const [filterProvincias, guardarFilterProvincias] = useState(provincias);
     const [filterMunicipios, guardarFilterMunicipios] = useState(municipios);
+    const [estadoMunicipio, guardarEstadoMunicipio] = useState()
 
     const getProvincias = async () => {
           try{
           const response = await axios.get('https://www.el-tiempo.net/api/json/v2/provincias'); 
           const nombreProvincias = response.data.provincias;
-         guardarProvincias(nombreProvincias)
+          guardarProvincias(nombreProvincias)
         }
         catch (err) {
             console.log(err.message);
@@ -34,7 +35,12 @@ const Homepage = () => {
       }
     }
 
+    
+
+    
+
    useEffect(() => {
+    
        getProvincias()
        getMunicipios()
    }, [])
@@ -43,7 +49,8 @@ const Homepage = () => {
         
       <>
         <Searchbar municipios={municipios} filteredList={guardarFilterMunicipios}/>
-        <List municipios={filterMunicipios} />
+        <List municipios={filterMunicipios} estadoMunicipio={guardarEstadoMunicipio} />
+        
       </>
         
     )
