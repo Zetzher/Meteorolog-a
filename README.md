@@ -11,7 +11,7 @@ Puedes consultar los datos actualizados de la API de el-tiempo.net
 
 ### Antes del uso
 
-Dos opciones:
+Dos opciones:</br>
 -npm i </br>
 -npm install
 
