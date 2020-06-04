@@ -2,6 +2,19 @@
 
 Puedes consultar los datos actualizados de la API de el-tiempo.net
 
+### Herramientas
+
+-React.JS
+-Eui Framework
+
+### Antes del uso
+
+Dos opciones:
+-npm i
+-npm install
+
+Utilizarlo en el directorio raíz, donde se encuentra package.json para instalar las dependencias.
+
 ### API Rest
 
 https://www.el-tiempo.net/api
