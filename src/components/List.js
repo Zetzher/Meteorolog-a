@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {
     EuiCard,
-    EuiIcon,
     EuiFlexGroup,
     EuiFlexItem,
-    EuiLink,
+    EuiText
   } from '@elastic/eui';
   import { Link } from 'react-router-dom';
   import axios from 'axios';
@@ -23,7 +22,6 @@ const List = ({municipios, almacen}) => {
        
        const response = await axios.get(`https://www.el-tiempo.net/api/json/v2/provincias/${codProv}/municipios/${result}`);
        const datosMunicipio = response.data;
-       console.log(datosMunicipio)
        guardarDatosMunicipio(datosMunicipio);
         //Municipio, temperatura actual y probabilidad de lluvia
         //cielo stateSky.description -- humedad -- nombre municipio.NOMBRE -- temperatura temperaturas.mas y temperaturas.min -- lluvia lluvia %
@@ -51,6 +49,7 @@ const List = ({municipios, almacen}) => {
                       layout="horizontal"
                       title={'Municipio:'}
                       description={municipios.NOMBRE}
+                      style={{color: 'white', backgroundColor: '#0325BC', textAlign: 'center', fontSize: 20}}
                       onClick={() => {getTiempo(municipios.CODPROV, municipios.CODIGOINE)}}
                       />
                     </EuiFlexItem>
@@ -60,11 +59,15 @@ const List = ({municipios, almacen}) => {
               <div>
                   {datosMunicipio ? (
                     <>
-                      <div>{datosMunicipio.municipio.NOMBRE}</div>
-                      <span>Temp. Max{datosMunicipio.temperaturas.max}º Temp. Min{datosMunicipio.temperaturas.min}º</span>
-                      <div>{datosMunicipio.stateSky.description}</div>
-                      <div>Humedad: {datosMunicipio.humedad}%</div>
-                </>)
+                      <div className='card'>
+                        <EuiText>
+                          <h1>{datosMunicipio.municipio.NOMBRE}</h1>
+                          <h2><span style={{color: '#FFFF00'}}>{datosMunicipio.temperaturas.max}º</span> <span style={{color: '#3DBFF2'}}>{datosMunicipio.temperaturas.min}º</span></h2>
+                          <h3 style={{display: 'inline'}}>Estado cielo: {datosMunicipio.stateSky.description}</h3>
+                          <h3>Humedad: {datosMunicipio.humedad}%</h3>
+                        </EuiText>
+                      </div>
+                    </>)
                 : null
                   }
               </div>

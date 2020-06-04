@@ -12,11 +12,13 @@ import React from 'react'
     
         return (
             <>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
                 <input className={'input'}
 				   type={'text'}
 				   placeholder={'Busca el municipio'}
 				   onChange={search}
                    />
+                </div>
             </>
         )
     }

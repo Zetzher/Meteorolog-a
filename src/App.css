@@ -1,2 +1,24 @@
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    width: 35vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2A86BF;
+}
 
+.card h1 {
+    color: white;
+}
 
+.card h3 {
+    color: white;
+}
+
+.input {
+    text-align: center;
+    width: 80vw;
+    height: 30px;
+    font-size: 18px;
+}
